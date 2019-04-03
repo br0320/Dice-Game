@@ -1,53 +1,58 @@
 // Make a game where there are two 6-sided dice and the player has 3 attempts to guess the total roll of both dice.
 // Test Change 20181113
 
+// 04/03/2019 - Updated the program to ask for the number of dice to roll.
+
 import java.util.*;
 
 public class Dice { // Start of class
 	
-	public static void main(String[] args) { // Start of main		
-		System.out.println("Hello! You have 3 attempts to guess the correct total roll of both dice!");	
-		System.out.println(" ");		
-		
+	public static void main(String[] args) { // Start of main	
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
-			
-			// Declare and initialize variables
 		
-			int die1 = rand.nextInt(6) + 1;
-			int die2 = rand.nextInt(6) + 1;
-			int sum = die1 + die2;		
+		System.out.println("Hello! Guess the total roll of both dice!");	
+		System.out.println(" ");	
+		
+		System.out.println("How many dice would you like to roll?");	
+		System.out.println(" ");
+		
+		int howManyDice = scan.nextInt(); //Get the user input of the number of dice to roll
+		int dicetotal = 0;	
+	
+		System.out.println("What is your guess?");	
+		System.out.println(" ");
+		
+		int guess = scan.nextInt(); // Get the input of the number the user guessed
+		
+			for (int x = 0; x<howManyDice; x++) { // For loop to get the random dice rolls for the amount of dice the user inputted
+				int dice = rand.nextInt(6) + 1; 
+				
+				System.out.println(dice);
+				dicetotal = dicetotal + dice; // Add up the total of the dice rolls
+				
+			}
 			
-			for (int x = 0; x<3; x++) { // Start of for loop
-				
-				int guess = scan.nextInt();
-				int guesscount = 2 - x;
-				
-				System.out.println("Your guess is " + guess + "!" );	
-				System.out.println(" ");
-				System.out.println("Let's see how you did!");
-				System.out.println(" ");			
-				System.out.println("Die1    Die2    Sum");				
-				System.out.println("  " + die1 + "    "+ "   " + die2 + "    " + "  " + sum);	
-				System.out.println(" ");
-				
-			if (guess == sum) { // Start of if				
+			System.out.println("Your guess is " + guess + "!" );	
+			System.out.println(" ");
+			System.out.println("Let's see how you did!");
+			System.out.println(" ");		
+			System.out.println("The sum of the " +howManyDice + " dice is " +dicetotal+ "!");
+			System.out.println(" ");	
+			
+		
+			if (guess == dicetotal) { // If loop to check if the user's guess was correct				
 	
 				System.out.println("Winner! Winner! Chicken Dinner!");
-				break;
 				
-			} // End of if
+			} 
 			
-			else { // Start of else
-					
-				System.out.println("That's incorrect! You have " + guesscount + " more guess(es)!");	
-				System.out.println(" ");
+			else{
 				
-			} // End of else
-				
-			} // End of for loop
+				System.out.println("Sorry that is incorrect! LOSER!!!!");
+			}
 			
-			scan.close(); // closing scan
+			scan.close();
 		
 	} // End of main
 
