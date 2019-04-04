@@ -36,18 +36,15 @@ public class Dice {
 				int diceRoll = rand.nextInt(6) + 1; 
 				
 				System.out.println(diceRoll);
-				sumofDice = sumofDice + diceRoll; 
-				
+				sumofDice = sumofDice + diceRoll; 				
 			}
 			
-			System.out.println("\n" + "The sum of the " +howManyDice + " dice is " +sumofDice+ "!"+ "\n");
-		
+			System.out.println("\n" + "The sum of the " +howManyDice + " dice is " +sumofDice+ "!"+ "\n");		
 			
 			// If loop to check if the user's guess was correct	
 			if (guess == sumofDice) { 			
 	
-				System.out.println("Winner! Winner! Chicken Dinner!");
-				
+				System.out.println("Winner! Winner! Chicken Dinner!");				
 			} 
 			
 			else{
