@@ -21,11 +21,7 @@ public class Dice {
 	
 	{
 		
-		numofSides = numberofSides;
-		
-		Random myRandomNumGenerator = new Random();
-		faceValue = myRandomNumGenerator.nextInt(numofSides) + 1;
-		
+		numofSides = numberofSides;		
 	}
 	
 	
