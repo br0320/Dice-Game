@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Dice {
+public class Player {
 
 
 
